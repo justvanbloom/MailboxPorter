@@ -9,29 +9,29 @@
 	<br>
 
 ___
-MailboxPorter nasce dalla necessità di rendere la migrazione delle email un processo visivo, intuitivo e privo di stress. Sfrutta la potenza di `imapsync` con un'interfaccia web moderna basata su PHP 8.3 e Tailwind CSS.
+MailboxPorter was born out of the need to make email migration a visual, intuitive, and stress-free process. Harness the power of 'imapsync' with a modern web interface based on PHP 8.3 and Tailwind CSS.
 
-## 🚀 Caratteristiche
-- 🐳 **Pronto all'uso con Docker**: Nessuna installazione complessa di Perl o dipendenze.
-- 🎨 **Interfaccia Moderna**: Design pulito e responsive.
-- ⚡ **Real-time Feedback**: Monitora il progresso della sincronizzazione live.
-- 🔒 **Sicuro**: Tutto gira localmente sul tuo server o PC.
+## 🚀 Features
+- 🐳 **Out-of-the-box with Docker**: No complex Perl installation or dependencies.
+- 🎨 **Modern Interface**: Clean and responsive design.
+- ⚡ **Real-time Feedback**: Monitor the progress of live synchronization.
+- 🔒 **Secure**: Everything runs locally on your server or PC.
 
 ![MailboxPorter Dashboard](assets/screenshot.jpg)
 
 
-## 🛠️ Installazione Rapida
+## 🛠️ Quick Installation
 
-Assicurati di avere [Docker](https://www.docker.com/) installato, quindi clona il repository:
+Make sure you have [Docker](https://www.docker.com/) installed, then clone the repository:
 
 ```bash
-git clone https://github.com/donatodelpeschio/MailboxPorter.git
+git clone https://github.com/justvanbloom/MailboxPorter.git
 cd MailboxPorter
 docker-compose up -d
 ```
-L'applicazione sarà disponibile su: http://localhost:8080
+The application will be available on: http://localhost:8080
 
-## 🏗️ Architettura
+## 🏗️ Architecture
 
 - Backend: PHP 8.x + imapsync (Perl engine)
 
@@ -45,15 +45,15 @@ L'applicazione sarà disponibile su: http://localhost:8080
 
 ___
 
-🤝 Contribuire
-Le pull request sono benvenute! Per modifiche importanti, apri prima un'issue per discutere cosa vorresti cambiare.
+🤝 Contribute
+Pull requests are welcome! For major changes, first open an issue to discuss what you'd like to change.
 
 ___
-☕ Supporta il progetto
-Se questo tool ti ha risparmiato ore di lavoro migrando caselle email, [offrimi un caffè](https://paypal.me/mailboxporter)!
+☕ Support the project
+If this tool has saved you hours of work by migrating email accounts, [buy me a coffee](https://paypal.me/justvanbloom)!
 
-Prodotto con ❤️ da Donato Del Peschio
-
+Produced with ❤️ by Donato Del Peschio
+Tranlated by JustVanBlooM
 
 ![MailboxPorter Advanced Filters](assets/screenshot2.jpg)
 
