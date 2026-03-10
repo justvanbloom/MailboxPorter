@@ -4,7 +4,7 @@
 
 
   <img src="/assets/badge/badge.svg" />
-  <a href="https://paypal.me/mailboxporter"><img src="/assets/badge/Donate-PayPal-green.svg" /></a>
+  <a href="https://paypal.me/justvanbloom"><img src="/assets/badge/Donate-PayPal-green.svg" /></a>
 	<br>
 	<br>
 
