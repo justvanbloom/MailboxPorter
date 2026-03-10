@@ -9,7 +9,7 @@ $exclude = $_POST['opt_exclude'] ?? '';
 $dryrun = isset($_POST['opt_dryrun']) && $_POST['opt_dryrun'] !== 'false';
 
 if (empty($s_host) || empty($d_host)) {
-    echo json_encode(['success' => false, 'message' => 'Dati mancanti']);
+    echo json_encode(['success' => false, 'message' => 'Missing data']);
     exit;
 }
 
