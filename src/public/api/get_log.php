@@ -9,5 +9,5 @@ if ($job_id && file_exists($log_file)) {
         'content' => file_get_contents($log_file)
     ]);
 } else {
-    echo json_encode(['success' => false, 'content' => 'In attesa di dati dal server...']);
+    echo json_encode(['success' => false, 'content' => 'Waiting for data from the server...']);
 }
