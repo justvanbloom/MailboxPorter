@@ -7,7 +7,7 @@ $user = ($type === 'source') ? ($_POST['s_user'] ?? '') : ($_POST['d_user'] ?? '
 $pass = ($type === 'source') ? ($_POST['s_pass'] ?? '') : ($_POST['d_pass'] ?? '');
 
 if (empty($host) || empty($user) || empty($pass)) {
-    echo json_encode(['success' => false, 'message' => 'Dati mancanti']);
+    echo json_encode(['success' => false, 'message' => 'Missing data']);
     exit;
 }
 
@@ -36,14 +36,14 @@ $is_conn_error = ($return_var === 10 || $return_var === 101 || $return_var === 1
 $success_in_log = strpos($full_output, 'Host1 banner:') !== false && strpos($full_output, 'Host1 failure:') === false;
 
 if ($return_var === 0 && $success_in_log) {
-    echo json_encode(['success' => true, 'message' => 'Connessione riuscita!']);
+    echo json_encode(['success' => true, 'message' => 'Connection Successful!']);
 } else {
     $error_msg = 'Errore di connessione';
 
     if ($is_auth_error || strpos($full_output, 'AUTHENTICATIONFAILED') !== false) {
-        $error_msg = 'Autenticazione fallita: password o utente errati.';
+        $error_msg = 'Authentication failed: Incorrect password or user.';
     } elseif ($is_conn_error) {
-        $error_msg = 'Impossibile raggiungere il server IMAP.';
+        $error_msg = 'Unable to reach IMAP server.';
     }
 
     echo json_encode([
