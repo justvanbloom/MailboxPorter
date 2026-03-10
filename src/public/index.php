@@ -47,10 +47,10 @@ $is_installed = !empty($imapsync_version) && preg_match('/\d+\.\d+/', $imapsync_
 
         <button type="submit" :disabled="migrating"
                 class="w-full py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-indigo-600 transition-all duration-300 shadow-xl disabled:opacity-50 flex items-center justify-center gap-4 text-lg">
-            <span x-show="!migrating" x-cloak>Avvia Sincronizzazione Ora</span>
+            <span x-show="!migrating" x-cloak>start sync now</span>
             <span x-show="migrating" x-cloak class="flex items-center gap-3">
                 <svg class="animate-spin h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                <span x-text="statusText === 'RECOVERY' ? 'Riconnessione...' : 'Sincronizzazione in corso...'"></span>
+                <span x-text="statusText === 'RECOVERY' ? 'reconnect...' : 'syncing...'"></span>
             </span>
         </button>
     </form>
@@ -60,23 +60,23 @@ $is_installed = !empty($imapsync_version) && preg_match('/\d+\.\d+/', $imapsync_
         <template x-if="showSummary">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
                 <div class="bg-indigo-600 p-5 rounded-2xl text-white shadow-lg">
-                    <p class="text-[10px] uppercase font-bold opacity-70">Trasferiti</p>
+                    <p class="text-[10px] uppercase font-bold opacity-70">Transferred</p>
                     <p class="text-3xl font-black" x-text="summaryData.transferred"></p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
-                    <p class="text-[10px] uppercase font-bold text-slate-400">Saltati</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Skipped</p>
                     <p class="text-3xl font-black text-slate-800" x-text="summaryData.skipped"></p>
                 </div>
                 <div class="p-5 rounded-2xl text-white shadow-lg text-center transition" :class="summaryData.errors > 0 ? 'bg-red-500' : 'bg-slate-800'">
-                    <p class="text-[10px] uppercase font-bold opacity-70">Errori</p>
+                    <p class="text-[10px] uppercase font-bold opacity-70">Errors</p>
                     <p class="text-3xl font-black" x-text="summaryData.errors"></p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
-                    <p class="text-[10px] uppercase font-bold text-slate-400">Volume Dati</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Size</p>
                     <p class="text-xl font-black text-slate-800 mt-2" x-text="summaryData.size"></p>
                 </div>
                 <div class="bg-emerald-500 p-5 rounded-2xl text-white shadow-lg text-center">
-                    <p class="text-[10px] uppercase font-bold opacity-70">Tempo</p>
+                    <p class="text-[10px] uppercase font-bold opacity-70">Time</p>
                     <p class="text-xl font-black mt-2" x-text="summaryData.time"></p>
                 </div>
             </div>
@@ -98,7 +98,7 @@ $is_installed = !empty($imapsync_version) && preg_match('/\d+\.\d+/', $imapsync_
             <div x-show="migrating && !showSummary" class="px-6 py-6 bg-slate-800/30 border-b border-slate-800">
                 <div class="flex flex-wrap justify-between items-end gap-4 mb-4">
                     <div class="flex-1">
-                        <p class="text-[10px] text-slate-500 uppercase font-black mb-1">Cartella</p>
+                        <p class="text-[10px] text-slate-500 uppercase font-black mb-1">Folder</p>
                         <p class="text-lg text-white font-mono truncate" x-text="currentFolder"></p>
                     </div>
                     <div class="text-right">
